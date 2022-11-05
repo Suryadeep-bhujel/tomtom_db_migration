@@ -39,70 +39,37 @@ class DbController extends Controller
 {
     public function test(Request $request)
     {
-        // $this->migrateUsers();
-        // $this->migrationMobUser();
-        // $this->migrateSmsOtp();
-        // $this->migrateCategory();
-        // $this->migrateLanguage();
-        // $this->migrateCountry();
-        // $this->migrateState();
-        // $this->migrateMasterReported();
-        // $this->migrateGoogleFcm();
-        // $this->migrateGenericToken();
-        // $this->migrateShows();
-        // $this->migratePodCast();
-        // $this->migratePodcastBookmark();
-        // $this->migratePodcastDisLike();
-        // $this->migratePodcastView();
-        // $this->migrateComment();
-        // $this->migrateAddSpot();
-        // $this->migrateCommentReply();
-        // $this->migrateCommentLikeDisLike();
-        // $this->migrateReplyLikeDisLike();
-        // $this->migrateBellNotification();
-        // $this->migrateMobUserNotification();
-        // $this->migrateChat();
-        // $this->migrate_mob_playlist_folder();
-        // $this->migrate_mob_playlist_folder_file();
-        // $this->migrate_user_reported();
-        // $this->migrate_notes();
+        $this->migrateUsers();
+        $this->migrationMobUser();
+        $this->migrateSmsOtp();
+        $this->migrateCategory();
+        $this->migrateLanguage();
+        $this->migrateCountry();
+        $this->migrateState();
+        $this->migrateMasterReported();
+        $this->migrateGoogleFcm();
+        $this->migrateGenericToken();
+        $this->migrateShows();
+        $this->migratePodCast();
+        $this->migratePodcastBookmark();
+        $this->migratePodcastDisLike();
+        $this->migratePodcastView();
+        $this->migrateComment();
+        $this->migrateAddSpot();
+        $this->migrateCommentReply();
+        $this->migrateCommentLikeDisLike();
+        $this->migrateReplyLikeDisLike();
+        $this->migrateBellNotification();
+        $this->migrateMobUserNotification();
+        $this->migrateChat();
+        $this->migrate_mob_playlist_folder();
+        $this->migrate_mob_playlist_folder_file();
+        $this->migrate_user_reported();
+        $this->migrate_notes();
         $this->migrate_rj_rating();
         $this->migrate_rj_subscribed();
         dd("done to migrate");
-        $tables = DB::select('SHOW TABLES');
-        // dd($tables);
-        $sum = 0;
-        $test = new TomtomModel;
-        // $test->attrib("test");
-
-        foreach ($tables as $tableItem) {
-            // dump($tableItem->Tables_in_tomtom);
-            $tableItems = DB::table($tableItem->Tables_in_tomtom)->count();
-            // $tableItems = DB::table($tableItem->Tables_in_tomtom)->get()->toArray();
-            // dd($data);
-            // foreach ($tableItems as $key => $tableData) {
-            //     $data = [
-            //         "id" => $tableData->id,
-            //         "title" => $tableData->title,
-            //         "link_type" => $tableData->link_type,
-            //         "link_value" => $tableData->link_value,
-            //         "image" => $tableData->image,
-            //         "sequence" => $tableData->sequence,
-            //         "status" => $tableData->status,
-            //     ];
-            //     dd($data, $tableItem->Tables_in_tomtom);
-            // }
-            print_r("<pre>");
-            // print_r("$tableItem->Tables_in_tomtom = $data");
-            print_r("$tableItem->Tables_in_tomtom  ");
-            // print_r("<br>");
-            // print_r($tableItem->Tables_in_tomtom);
-            print_r("<br>");
-            print_r("<pre>");
-            $sum = $sum + $tableItems;
-        }
-        dd("done", $sum);
-        // dd($tables );
+        
     }
     // 1 migration
     protected function migrateUsers()
